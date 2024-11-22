@@ -9,6 +9,7 @@ contract UniswapV2Factory is IUniswapV2Factory {
 
     mapping(address => mapping(address => address)) public getPair;
     address[] public allPairs;
+    // define paires and store paires' address
 
     event PairCreated(address indexed token0, address indexed token1, address pair, uint);
 
@@ -36,6 +37,8 @@ contract UniswapV2Factory is IUniswapV2Factory {
         allPairs.push(pair);
         emit PairCreated(token0, token1, pair, allPairs.length);
     }
+// create paire is a main function in factory //
+
 
     function setFeeTo(address _feeTo) external {
         require(msg.sender == feeToSetter, 'UniswapV2: FORBIDDEN');

@@ -11,6 +11,7 @@ import './interfaces/IUniswapV2Callee.sol';
 contract UniswapV2Pair is IUniswapV2Pair, UniswapV2ERC20 {
     using SafeMath  for uint;
     using UQ112x112 for uint224;
+    // here Unit and uint224 type will can used like price0CumulativeLast.add(value) // 
 
     uint public constant MINIMUM_LIQUIDITY = 10**3;
     bytes4 private constant SELECTOR = bytes4(keccak256(bytes('transfer(address,uint256)')));
