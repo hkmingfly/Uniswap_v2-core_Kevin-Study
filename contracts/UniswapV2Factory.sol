@@ -8,6 +8,7 @@ contract UniswapV2Factory is IUniswapV2Factory {
     address public feeToSetter;
 
     mapping(address => mapping(address => address)) public getPair;
+    //这里保存的是token0，token1对应的Pair地址，和token1，token0对应的同一个Pair地址。
     address[] public allPairs;
     // define paires and store paires' address
 
